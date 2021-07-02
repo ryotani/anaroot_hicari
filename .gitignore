@@ -10,6 +10,7 @@
 *in
 *.deps
 *.libs
+*.pcm
 
 autom4te.cache/
 include/
