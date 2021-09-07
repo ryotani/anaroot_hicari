@@ -146,7 +146,7 @@ void TArtCalibIC::ReconstructData()   { // call after the raw data are loaded
     ic->SetEnergyAvSum(0.0);
 
     Int_t nlayer = NUM_IC_CHANNEL;
-    if(11 == ic->GetFpl()) nlayer = 6; // number of layer for F11 is "6". 7th ch is used for pressure monitoring at F11
+    if(11 == ic->GetFpl() || 41 == ic->GetFpl() || 7 == ic->GetFpl()) nlayer = 6; // number of layer for F11 is "6". 7th ch is used for pressure monitoring at F11
 
     for(Int_t ii=0;ii<nlayer;ii++) {
       Double_t adc = (Double_t)ic->GetRawADC(ii)*1.0 - para->GetPedestal(ii);
